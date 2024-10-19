@@ -1,10 +1,10 @@
-const browserVersion = "Chrome";  // Global constant
+const browserVersion = "Chrome";  
 
 function getBrowserVersion() {
   if (browserVersion === "Chrome") {
-    let browserVersion = "Firefox";  // Local variable declared with 'var'
+    let browserVersion = "Firefox";  
   }
-  console.log("browserVersion is: " + browserVersion);  // Output is "Firefox"
+  console.log("browserVersion is: " + browserVersion);  
 }
 
 getBrowserVersion();  // Call the function
