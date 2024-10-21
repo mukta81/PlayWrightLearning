@@ -1,5 +1,5 @@
 function launchBrowser(browserName) {
-  if (browserName == "Chrome") {
+  if (browserName.toLowerCase() == "chrome") {
     console.log("It is Chrome Browser");
   } else {
     console.log("It is not a Chrome Browser");
@@ -7,7 +7,7 @@ function launchBrowser(browserName) {
 }
 
 function runTests(testType) {
-  switch (testType) {
+  switch (testType.toLowerCase()) {
     case "smoke": {
       console.log("Smoke Testing");
       break;
