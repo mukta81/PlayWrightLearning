@@ -59,7 +59,7 @@ await page.waitForTimeout(5000);
 
 //file upload
 //await page.locator("//input[@name='fileInput']").setInputFiles("data/testFile.txt")
-await page.locator("//input[@name='fileInput']").setInputFiles(["data/tests/assignment/testFile.txt","data/tests/assignment/testFile2.txt"])
+await page.locator("//input[@name='fileInput']").setInputFiles(["data/testFile.txt","data/testFile2.txt"])
 
 //click done button
 const doneButton = page.locator("text=Done").last();
