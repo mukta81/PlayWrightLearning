@@ -1,4 +1,4 @@
-import test, { chromium } from "@playwright/test";
+import {test, chromium } from "@playwright/test";
 
 
 test("launch SalesForce browser", async () => {
