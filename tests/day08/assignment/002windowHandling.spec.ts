@@ -1,7 +1,8 @@
 import { lookup } from "dns";
-import test, { expect } from "playwright/test";
+import {test, expect } from "playwright/test";
 
 test('merge lead: window handling', async({page, context})=>{
+
 await page.goto("http://leaftaps.com/opentaps/control/main");
 
 
@@ -41,7 +42,7 @@ await lookTOPage.locator("//div[@class='x-grid3-body']/div[2]/table//tr[1]/td[1]
 
 
 //handling alert one time
-page.once("dialog", alertType=>{
+page.once("dialog", async(alertType)=>{
 const alertMsg = alertType.message();
 const type = alertType.type();
 console.log(`Message: ${alertMsg} ,and type: ${type}`)

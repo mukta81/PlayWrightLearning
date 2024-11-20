@@ -1,5 +1,5 @@
 import path, { dirname } from "path";
-import test, { expect } from "playwright/test";
+import {test, expect } from "playwright/test";
 
 test('Salesforce  application File Upload', async({page})=>{
 
