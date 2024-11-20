@@ -28,6 +28,10 @@ await page.locator("#createLeadForm_lastName").fill("Agarwal");
 //click submit
 await page.locator(".smallSubmit").click();
 
+//page.pause();
+const resultLead = await page.locator("#viewLead_companyName_sp").innerText();
+expect(resultLead).toContain("TL");
+
 //click Edit
 await page.locator('text="Edit"').click();
 

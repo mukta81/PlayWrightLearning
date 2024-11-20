@@ -18,10 +18,10 @@ await page.locator('text="CRM/SFA"').click();
 await page.locator('text="Leads"').click();
 
 //Click on Create Lead
-await page.locator('text="Create Lead"').click();
+await page.locator('text="Create Lead"').first().click();
 
 //enter mandatory details
-await page.locator("#createLeadForm_companyName").fill("Testleaf");
+await page.locator("#createLeadForm_companyName").fill("TL");
 await page.locator("#createLeadForm_firstName").fill("Mukta");
 await page.locator("#createLeadForm_lastName").fill("Agarwal");
 
@@ -35,7 +35,15 @@ await page.selectOption("#createLeadForm_dataSourceId", {label: "Direct Mail"})
 //click submit
 await page.locator(".smallSubmit").click();
 
+//click Edit
+await page.locator('text="Edit"').click();
 
+//change Company Name
+//await page.locator("#createLeadForm_companyName").clear();
+await page.locator("#updateLeadForm_companyName").fill("Testleaf");
 
+//click submit
+await page.locator(".smallSubmit").nth(0).click();
 
+await page.waitForTimeout(3000);
 })
