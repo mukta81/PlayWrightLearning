@@ -1,0 +1,19 @@
+[
+  {
+    "Source": "Employee",
+    "Marketing": "Automobile",
+    "Industry": "Aerospace",
+    "Currency": "ARS",
+    "Country": "IND",
+    "State": "IN-MH"
+  },
+
+  {
+    "Source": "Direct Mail",
+    "Marketing": "Demo Marketing Campaign",
+    "Industry": "General Services",
+    "Currency": "INR",
+    "Country": "IND",
+    "State": "IN-AP"
+  }
+]
