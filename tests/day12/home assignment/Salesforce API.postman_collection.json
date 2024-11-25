@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "512f681d-0747-4294-a05b-1f4af80ea25b",
+		"name": "Salesforce API",
+		"description": "SalesForce API's to perform CRUD Operations on Leads and Accounts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30050655",
+		"_collection_link": "https://planetary-resonance-780183.postman.co/workspace/PlaywrightAPI~266c68ca-82a0-4e30-aa21-1b4e054c8035/collection/30050655-512f681d-0747-4294-a05b-1f4af80ea25b?action=share&source=collection_link&creator=30050655"
+	},
+	"item": [
+		{
+			"name": "Generate OAuth Token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var resp=pm.response.json();\r",
+							"var access=resp.access_token;\r",
+							"pm.collectionVariables.set(\"token\", access);\r",
+							"console.log(access)"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "3MVG9PwZx9R6_Ure0UB88C0o0EtzYTMfDhrdDPhv2OYY8QMISDZ._wNFMuhu5R9zWHrlanM47FILAkRrU4hhK",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "223C9439846D45A96537627DE047933E495A6CF952DCE7419773832F6578FACE",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "mukta@testleaf.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "qazwsx123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://login.salesforce.com/services/oauth2/token",
+					"protocol": "https",
+					"host": [
+						"login",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"oauth2",
+						"token"
+					]
+				},
+				"description": "Generate OAuth Token for accessing Sales Force API's"
+			},
+			"response": [
+				{
+					"name": "Sample Response-OAuth Token",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "grant_type",
+									"value": "password",
+									"type": "text"
+								},
+								{
+									"key": "client_id",
+									"value": "3MVG9PwZx9R6_Ure0UB88C0o0EtzYTMfDhrdDPhv2OYY8QMISDZ._wNFMuhu5R9zWHrlanM47FILAkRrU4hhK",
+									"type": "text"
+								},
+								{
+									"key": "client_secret",
+									"value": "223C9439846D45A96537627DE047933E495A6CF952DCE7419773832F6578FACE",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "ranjini.r@testleaf.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Testleaf$321",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://login.salesforce.com/services/oauth2/token",
+							"protocol": "https",
+							"host": [
+								"login",
+								"salesforce",
+								"com"
+							],
+							"path": [
+								"services",
+								"oauth2",
+								"token"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 18 Aug 2023 07:32:16 GMT"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache,must-revalidate,max-age=0,no-store,private"
+						},
+						{
+							"key": "Expires",
+							"value": "Thu, 01 Jan 1970 00:00:00 GMT"
+						},
+						{
+							"key": "X-ReadOnlyMode",
+							"value": "false"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"00D5j00000C8pLO!ARoAQJkv2RwPAm9HLOugwZ1bTLRXD4KulKXQ8r8HBCGZt0sRLIMGcWMk6dVAUdKhrcKmQujGZ5wAO18T8q.6HQZb_ScZ3y9F\",\n    \"instance_url\": \"https://testleaf30-dev-ed.develop.my.salesforce.com\",\n    \"id\": \"https://login.salesforce.com/id/00D5j00000C8pLOEAZ/0055j0000080rEbAAI\",\n    \"token_type\": \"Bearer\",\n    \"issued_at\": \"1692343936897\",\n    \"signature\": \"9EhTlZnZUI4qZ8ru7IPx6hMBTapEE5J4K7zyRZ9Gdj0=\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Opportunity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"var id = res.id;\r",
+							"pm.globals.set(\"oppID\", id);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"Name\": \"Mukta postman\",\r\n\"StageName\": \"Qualification\",\r\n\"CloseDate\": \"2024-12-12\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf105-dev-ed.develop.my.salesforce.com/services/data/v59.0/sobjects/Opportunity",
+					"protocol": "https",
+					"host": [
+						"testleaf105-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v59.0",
+						"sobjects",
+						"Opportunity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Opportunity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var resp = pm.response.json();\r",
+							"var firstId = resp.recentItems[0].Id\r",
+							"pm.collectionVariables.set(\"firstId\", firstId);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://testleaf105-dev-ed.develop.my.salesforce.com/services/data/v59.0/sobjects/Opportunity",
+					"protocol": "https",
+					"host": [
+						"testleaf105-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v59.0",
+						"sobjects",
+						"Opportunity"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Particular Opportunity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://testleaf105-dev-ed.develop.my.salesforce.com/services/data/v59.0/sobjects/Opportunity/{{oppID}}",
+					"protocol": "https",
+					"host": [
+						"testleaf105-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v59.0",
+						"sobjects",
+						"Opportunity",
+						"{{oppID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Opportunity Update",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"var id = res.id;\r",
+							"pm.globals.set(\"oppID\", id);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Type\": \"New Customer\",\r\n    \"StageName\": \"Prospecting\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf105-dev-ed.develop.my.salesforce.com/services/data/v59.0/sobjects/Opportunity/{{oppID}}",
+					"protocol": "https",
+					"host": [
+						"testleaf105-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v59.0",
+						"sobjects",
+						"Opportunity",
+						"{{oppID}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete First Opportunity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = pm.response.json();\r",
+							"var id = res.id;\r",
+							"pm.globals.set(\"oppID\", id);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Type\": \"New Customer\",\r\n    \"StageName\": \"Prospecting\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://testleaf105-dev-ed.develop.my.salesforce.com/services/data/v59.0/sobjects/Opportunity/{{firstId}}",
+					"protocol": "https",
+					"host": [
+						"testleaf105-dev-ed",
+						"develop",
+						"my",
+						"salesforce",
+						"com"
+					],
+					"path": [
+						"services",
+						"data",
+						"v59.0",
+						"sobjects",
+						"Opportunity",
+						"{{firstId}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "lead_ID",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "account_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "firstId",
+			"value": ""
+		}
+	]
+}
